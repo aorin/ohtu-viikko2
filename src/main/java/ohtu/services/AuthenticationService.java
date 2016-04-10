@@ -17,13 +17,16 @@ public class AuthenticationService {
 
     public boolean logIn(String username, String password) {
         for (User user : userDao.listAll()) {
-            if (user.getUsername().equals(username)
-                    && user.getPassword().equals(password)) {
+            if (check(user, username, password)) {
                 return true;
             }
         }
 
         return false;
+    }
+    
+    private boolean check(User user, String name, String password) {
+        return user.getUsername().equals(name) && user.getPassword().equals(password);
     }
 
     public boolean createUser(String username, String password) {
