@@ -14,8 +14,7 @@ public class App {
     private AuthenticationService auth;
 
     @Autowired
-    public App(IO io, AuthenticationService auth) {
-        this.io = io;
+    public App(IO io, AuthenticationService auth) { this.io = io;
         this.auth = auth;
     }
 
